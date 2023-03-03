@@ -20,10 +20,6 @@ db.createUser({
 
 EOF
 
-
-
-
-
 mongo mongodb://admin:admin@@123@localhost/admin  file1.js
 
 mongo admin --eval "db.auth('root', 'root'); db.getSiblingDB('chakshudb').createUser({user: 'chakshu', pwd: 'chakshumanager', roles: [{ role: 'readWrite', db: 'chakshudb' }]})"
