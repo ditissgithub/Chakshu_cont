@@ -38,3 +38,6 @@ systemctl restart mongod
 RUN pip3.7 install --upgrade pip && \
 pip install --upgrade setuptools
 
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+CMD [ "/entrypoint.sh" ]
