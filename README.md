@@ -1,9 +1,9 @@
-# Chakshu_cont
-step1.
+# Chakshu_cont: clone repo from github to your server
+
 
 git clone https://github.com/ditissgithub/Chakshu_cont.git
 
-step2.
+
 
 # Extract the repo of chakshu
 tar xvzf chakshu_backend-v2.5.tar.gz -C /home/apps 
@@ -12,13 +12,13 @@ cd /home/apps
  
 mv chakshu_backend-vX.X/ chakshu
 
-step3. 
+
 
 # Build the image
 
 docker build -t chakshu_img .
 
-step4.
+
 
 # Create conatiner using this command
 
