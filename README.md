@@ -10,7 +10,7 @@ tar xvzf chakshu_backend-v2.5.tar.gz -C /home/apps
 
 cd /home/apps
  
-mv chakshu_backend-vX.X/ chakshu
+mv chakshu_backend-v2.5/ chakshu
 
 
 
