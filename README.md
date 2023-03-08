@@ -23,4 +23,4 @@ docker build -t chakshu_img .
 
 # Create conatiner using this command
 
-docker run -it --name chakshu --hostname chakshu --network create_container_slurm --privileged -v /home/apps/chakshu/.secret:/home/apps/chakshu/ -v /home/apps/chakshu/:/home/apps/chakshu/ <chakshu_img> /usr/sbin/init
+docker run -it --name chakshu --hostname chakshu --network create_container_slurm --privileged -v /home/apps/chakshu/.secret:/home/apps/chakshu/ -v /home/apps/chakshu/:/home/apps/chakshu/ chakshu_img /usr/sbin/init
