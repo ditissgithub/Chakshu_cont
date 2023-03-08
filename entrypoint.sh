@@ -10,10 +10,14 @@ sed -i -e 's|Group=mongod|Group=root|g' /usr/lib/systemd/system/mongod.service
 systemctl daemon-reload 
 systemctl restart mongod
 
-# install the chakshu repo on / directory of host machine because we mount the repo from / directory inside contianer
-sed -i -e 's|mysqlclient==1.3.6|mysqlclient==2.1.1|g' /chakshu_conf/chakshu_backend-v2.5/requirements.txt
 
-pip install -r /chakshu_conf/chakshu_backend-v2.5/requirements.txt
+# creating directory for copy all the logs related to chakshu
+mkdir -p /var/log/chakshu
+
+# install the chakshu repo on / directory of host machine because we mount the repo from / directory inside contianer
+sed -i -e 's|mysqlclient==1.3.6|mysqlclient==2.1.1|g' /home/apps/chakshu/requirements.txt
+
+pip install -r /home/apps/chakshu/requirements.txt
 
 # Start the MongoDB shell as a root user on the admin database
 mongo admin --eval "db.auth('root', 'root');"
