@@ -9,6 +9,8 @@ git clone https://github.com/ditissgithub/Chakshu_cont.git
 
 cd Chakshu_cont
 
+mkdir /home/apps
+
 tar xvzf chakshu_backend-v2.5.tar.gz -C /home/apps 
  
 mv /home/apps/chakshu_backend-v2.5/ /home/apps/chakshu
