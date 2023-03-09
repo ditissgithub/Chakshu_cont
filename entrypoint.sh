@@ -1,12 +1,5 @@
 #!/bin/bash
 
-sed -i -e 's|bindIp: 127.0.0.1  # Enter 0.0.0.0,:: to bind to all IPv4 and IPv6 addresses or, alternatively, use the net.bindIpAll setting.|bindIp: 0.0.0.0  # Enter 0.0.0.0,:: to bind to all IPv4 and IPv6 addresses or, alternatively, use the net.bindIpAll setting.|g' /etc/mongod.conf 
-sed -i -e 's|#security|security|g' /etc/mongod.conf  
-sed -i "/security/a   \ \ authorization: 'enabled'" /etc/mongod.conf 
-sed -i -e 's|ExecStartPre=/usr/bin/chown mongod:mongod /var/run/mongodb|ExecStartPre=/usr/bin/chown -R root:root /var/run/mongodb|g' /usr/lib/systemd/system/mongod.service 
-sed -i -e 's|User=mongod|User=root|g' /usr/lib/systemd/system/mongod.service 
-sed -i -e 's|Group=mongod|Group=root|g' /usr/lib/systemd/system/mongod.service
-
 systemctl daemon-reload 
 systemctl restart mongod
 
