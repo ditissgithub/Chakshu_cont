@@ -18,15 +18,8 @@ RUN rm Python-3.7.0.tgz
 #RUN yum install -y virtualenv htop
 
 RUN yum clean all
-RUN cat > /etc/yum.repos.d/mongodb-org-4.0.repo <<EOF \
-[mongodb-org-4.0] \
-name=MongoDB Repository \
-baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.0/x86_64/ \
-gpgcheck=1 \
-enabled=1 \
-gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc \
-EOF
-
+COPY mongodb-org-4.0.repo  /etc/yum.repos.d/mongodb-org-4.0.repo
+ 
 RUN yum install -y mongodb-org mariadb-devel 
 RUN pip3.7 install --upgrade pip && \
 pip install --upgrade setuptools
