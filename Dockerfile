@@ -21,6 +21,9 @@ RUN yum clean all
 COPY mongodb-org-4.0.repo  /etc/yum.repos.d/mongodb-org-4.0.repo
  
 RUN yum install -y mongodb-org mariadb-devel 
+RUN python3.7 -m venv venv_chakshu && \
+source venv_chakshu/bin/activate
+
 RUN pip3.7 install --upgrade pip && \
 pip install --upgrade setuptools
 
