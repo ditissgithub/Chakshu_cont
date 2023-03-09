@@ -2,6 +2,7 @@
 
 systemctl daemon-reload 
 systemctl restart mongod
+systemctl restart sshd
 
 
 # creating directory for copy all the logs related to chakshu
