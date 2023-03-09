@@ -16,7 +16,7 @@ pip install -r /home/apps/chakshu/requirements.txt
 mongo admin --eval "db.auth('root', 'root');"
 
 # Create the admin database
-mongo admin --eval "db.getSiblingDB('admin').createUser({user: 'admin', pwd: 'admin@@123', roles: [{ role: 'root', db: 'admin' }]})"
+mongo admin --eval "db.getSiblingDB('admin').createUser({user: 'admin', pwd: 'admin123', roles: [{ role: 'root', db: 'admin' }]})"
 
 cat > file1.js << EOF
 db.createUser({
@@ -27,7 +27,7 @@ db.createUser({
 
 EOF
 
-mongo mongodb://admin:admin@@123@localhost/admin  file1.js
+mongo mongodb://admin:admin123@localhost/admin  file1.js
 
 mongo admin --eval "db.auth('root', 'root'); db.getSiblingDB('chakshudb').createUser({user: 'chakshu', pwd: 'chakshumanager', roles: [{ role: 'readWrite', db: 'chakshudb' }]})"
 
