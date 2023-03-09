@@ -1,6 +1,6 @@
 FROM almalinux:8.7
 
-RUN dnf install -y gcc openssl-devel bzip2-devel libffi-devel python3-devel openldap-devel
+RUN dnf install -y gcc openssl-devel bzip2-devel libffi-devel python3-devel openldap-devel openssh-server
 WORKDIR /opt
 RUN yum install -y wget cmake ansible-core
 #RUN wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz
@@ -16,6 +16,12 @@ RUN rm Python-3.7.0.tgz
 #RUN dnf update -y
 
 #RUN yum install -y virtualenv htop
+
+RUN sed -i -e 's|#PermitRootLogin yes|PermitRootLogin yes|g' \
+           -e 's|#Port 22|Port 5100|g' \
+           -e 's|#UseDNS yes|UseDNS no|g' /etc/ssh/sshd_config && \
+    echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config && \
+    echo "root:chakshu" | chpasswd
 
 RUN yum clean all
 
