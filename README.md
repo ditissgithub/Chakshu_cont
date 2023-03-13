@@ -34,6 +34,8 @@ docker exec -it chakshu /bin/bash
 
 ###inside container run####
 
+#run bash script 
+
 bash /entrypoint.sh
 
 #ask at the time of run script
