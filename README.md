@@ -26,6 +26,8 @@ docker build -t chakshu_img .
 
 # Create conatiner using this command
 
+ #in my case network is create_container_slurm (my bridge network on this network slurm and ldap is running)
+
 docker run -it -d --name chakshu --hostname chakshu --network create_container_slurm --privileged -v /home/apps/chakshu/:/home/apps/chakshu/ chakshu_img /usr/sbin/init
 
 # Go inside the container 
