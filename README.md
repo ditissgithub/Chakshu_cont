@@ -55,7 +55,7 @@ Miniconda3 will now be installed into this location:
   - Press CTRL-C to abort the installation
   - Or specify a different location below
 
-[/root/miniconda3] >>> /home/apps/chakshu/miniconda
+[/root/miniconda3] >>> /home/apps/chakshu/miniconda/
 
 #ask for initialisation 
 
